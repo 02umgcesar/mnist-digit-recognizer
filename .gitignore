@@ -1,0 +1,16 @@
+# MNIST download (torchvision fetches it automatically)
+data/
+
+# Trained model weights
+*.pt
+*.pth
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / OS
+.vscode/
+.DS_Store
