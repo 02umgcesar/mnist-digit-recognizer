@@ -2,18 +2,28 @@
 
 A handwritten digit classifier built with PyTorch, trained on the MNIST dataset and tested on my own handwriting.
 
-Built as a learning project to understand `Dataset`, `DataLoader`, batching, and the difference between training and test performance.
-
 ## Setup
 
-Requires Python 3.12. Create a virtual environment in the project root and install the dependencies into it:
+Requires Python 3.12.
 
 ```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
 python3 -m pip install -r requirements.txt
 ```
 
-Run `source .venv/bin/activate` in each new terminal before working on the project.
+## Usage
 
-**VS Code:** run **Python: Select Interpreter** and choose `.venv/bin/python`. If Pylance reports `Import "torch" could not be resolved`, VS Code is using a different Python. Select the `.venv` interpreter again.
+Run all commands from the project root.
+
+**1. Train the model** (once). This downloads MNIST into `data/`, trains for 5 epochs, and saves the weights to `checkpoint.pt`:
+
+```bash
+python3 src/train.py
+```
+
+**2. Predict a digit.** Set `image_path` in `src/predict.py` to your image, then run:
+
+```bash
+python3 src/predict.py
+```
+
+The image should show a single white digit on a black background. Any size works; it is resized to 28 × 28.
